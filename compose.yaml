@@ -1,0 +1,15 @@
+services:
+  postgres:
+    image: postgres:15
+    container_name: email_webhook_db
+    environment:
+      POSTGRES_DB: email_webhook
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:
