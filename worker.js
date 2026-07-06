@@ -29,7 +29,7 @@ export default {
       // 2. Read the raw RFC822 email payload and POST it to Next.js Webhook
       const rawResponse = new Response(message.raw);
       const rawEmailText = await rawResponse.text();
-      const webhookUrl = env.WEBHOOK_URL || "https://fragrant-ought-limelight.ngrok-free.dev/api/webhook/email";
+      const webhookUrl = env.WEBHOOK_URL || "https://mail.spacebuilder.in/api/webhook/email";
       const webhookSecret = env.WEBHOOK_SECRET || "cf_webhook_secret_99f3a1e28b7d4c5e";
       ctx.waitUntil(
         fetch(webhookUrl, {
